@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>文件哈希校验</title>
+</head>
+<body>
+  <input type="file" id="fileInput" />
+  <button onclick="handleFile()">上传文件</button>
+  <div id="result"></div>
+
+  <script src="./index.js"></script>
+  <script>
+    function handleFile() {
+        const fileInput = document.getElementById("fileInput");
+        const start = new Date().getTime();
+        window.calc_file_hash(fileInput.files[0]).then(function(res){
+          const end = new Date().getTime();
+          console.log(`文件Md5: ${res}`);
+          console.log(`耗时: ${end - start}ms`);
+        });
+        
+        // const file = fileInput.files[0];
+        // const reader = new FileReader();
+
+        // const start = new Date().getTime();
+        // reader.onload = function(e) {
+        //   const chunkData = e.target.result;
+        //   const fileMD5 = window.calc_file_hash(chunkData);
+
+        //   const end = new Date().getTime();
+        //   console.log('文件MD5哈希值:', fileMD5);
+        //   console.log(`耗时: ${end - start}ms`);
+        // }
+
+        // reader.readAsArrayBuffer(file);
+
+        // const start = new Date().getTime();
+        // const fileMD5 = window.calc_file_hash(file);
+        // console.log(file.slice());
+        // console.log(window.file_size(file.slice()));
+
+        // const end = new Date().getTime();
+        // console.log('文件MD5哈希值:', fileMD5);
+        // console.log(`耗时: ${end - start}ms`);
+    }
+  </script>
+</body>
+</html>
