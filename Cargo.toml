@@ -1,7 +1,9 @@
 [package]
-name = "md5-wasm"
-version = "0.1.0"
+name = "file-md5-wasm"
+version = "0.2.0"
 edition = "2021"
+homepage = "https://github.com/quansitech/file-md5-wasm"
+authors = ["tiderjian"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
