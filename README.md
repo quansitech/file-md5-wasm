@@ -9,15 +9,23 @@ npm add @quansitech/file-md5-wasm
 
 ### Usage
 
-index.js
+use in ES6
 ```javascript
-const js = import("@quansitech/file-md5-wasm");
-js.then(js => {
-    window.calc_file_hash = js.calc_file_hash;
-});
+import init, {calc_file_hash} from '@quansitech/file-md5-wasm';
+
+const upload = async (file: File) => {
+    await init();
+    const hashId = await calc_file_hash(file);
+    console.log(hashId);
+}
+
 ```
 
-index.html
+use in browser
+
+Download the contents of the 'dist' folder. When loading 'index.js' on the webpage, the 'calc_file_hash' function will be automatically added to 'window' object.
+
+
 ```html
 <html>
 <head>
@@ -44,23 +52,20 @@ index.html
 </html>
 ```
 
-webpack.config.js
-```javascript
-const path = require("path");
-module.exports = {
-  entry: "./index.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "index.js",
-  },
-  experiments: {
-    syncWebAssembly: true
-  },
-  mode: "development",
-};
+
+#### how to build
+
+```shell
+wasm-pack build --target web
 ```
 
+publish to npm
+```shell
+cd pkg
+npm publish
+```
 
-#### use in broswer
-
-Download the contents of the 'dist' folder. When loading 'index.js' on the webpage, the 'calc_file_hash' function will be automatically added to 'window' object.
+build index.js for browser
+```shell
+npm run build
+```

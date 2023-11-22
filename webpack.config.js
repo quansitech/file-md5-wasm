@@ -5,8 +5,5 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js"
   },
-  experiments: {
-    syncWebAssembly: true
-  },
   mode: "development",
 };
