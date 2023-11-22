@@ -56,7 +56,7 @@ Download the contents of the 'dist' folder. When loading 'index.js' on the webpa
 #### how to build
 
 ```shell
-wasm-pack build --target web
+wasm-pack build --target web --scope quansitech --package file-md5-wasm
 ```
 
 publish to npm
