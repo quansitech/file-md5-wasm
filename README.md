@@ -21,6 +21,8 @@ const upload = async (file: File) => {
 
 ```
 
+PS. init()方法会根据webpack的 output.publicPath自动寻找wasm文件所在的位置，如果发现这个地址不正确，需要调整webpack的output.publicPath配置。
+
 use in browser
 
 Download the contents of the 'dist' folder. When loading 'index.js' on the webpage, the 'calc_file_hash' function will be automatically added to 'window' object.
