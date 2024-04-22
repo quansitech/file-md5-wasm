@@ -8,10 +8,10 @@
   <button onclick="handleFile()">上传文件</button>
   <div id="result"></div>
 
-  <script src="./index.js"></script>
+  <script src="index.js"></script>
   <script>
     function handleFile() {
-        const fileInput = document.getElementById("fileInput");
+        const fileInputfsd = document.getElementById("fileInput");
         const start = new Date().getTime();
         window.calc_file_hash(fileInput.files[0]).then(function(res){
           const end = new Date().getTime();

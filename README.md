@@ -71,3 +71,13 @@ build index.js for browser
 ```shell
 npm run build
 ```
+
+
+#### Old Version Browsers
+
+Old version browsers have poor compatibility with wasm. You may use the JS code in the JS folder as a substitute, which will also create the `calc_file_hash` function to achieve the same functionality.
+
+```html
+<script src="md5.min.js"></script>
+<script src="calc_file_hash.js"></script>
+```
